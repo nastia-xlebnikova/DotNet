@@ -1,0 +1,70 @@
+﻿@model IEnumerable<khlebnikova.Student>
+
+<style type="text/css">
+    body {
+        background: black;
+    }
+    table, th, td {
+        border: 1px solid white;
+        border-collapse: collapse;
+        background: radial-gradient(farthest-corner at 50% 50%, #582C8C, #BE5DE6);
+        border-top-style: outset;
+        border-top-color: turquoise;
+        border-top-width: thin;
+        border-top-color: #D0A7F6;
+        border-color: #C0A1E5;
+        text-align: center;
+        margin: auto;
+        align-content: center;
+    }
+    tr {
+        
+        color: white;
+        font-family: 'Rock Salt', cursive;
+    }
+    h1 {
+        text-align: center;
+        margin: 20px auto;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: 'Rock Salt', cursive;
+        padding: 20px;
+        font-style: italic;
+        caption-side: bottom;
+        color: white;
+        text-shadow: 0 0 10px white,0 0 20px #BE5DE6,0 0 30px #BE5DE6,0 0 40px #BE5DE6;
+        letter-spacing: 1px;
+    }
+
+</style>
+
+<h1>Students list:</h1>
+
+<table style="width: 60%;">
+    <tr>
+        <th>Student</th>
+        <th>Date of Birth</th>
+        <th>Date of admission</th>
+        <th>Age</th>
+        <th>Faculty</th>
+        <th>Progress%</th>
+        <th>Group index</th>
+        <th>Specialty</th>
+
+    </tr>
+    @foreach (var s in Model)
+    {
+<tr>
+    <td>@($"{s.Lastname} {s.Name} {s.Patronym}")</td>
+    <td>@($"{s.Birthday}")</td>
+    <td>@($"{s.Date}")</td>
+    <td>@($"{s.Age(s)}")</td>
+    <td>@($"{s.Faculty}")</td>
+    <td>@($"{s.Specialty}")</td>
+    <td>@($"{s.Index}")</td>
+    <td>@($"{s.Progress}")</td>
+
+
+</tr>
+    }
+</table>
